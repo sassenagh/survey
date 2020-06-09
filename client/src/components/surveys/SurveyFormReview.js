@@ -16,22 +16,26 @@ const SurveyReview = ({onCancel, formValues, submitSurvey, history}) => {
   });
 
   return (
-    <div>
-      <h5>Please confirm</h5>
-      {reviewFields}
-      <button
-        className="yellow white-text darken-3 btn-flat"
-        onClick={onCancel}
-      >
-        Back
-      </button>
-      <button
-        className="green white-text btn-flat right"
-        onClick={() => submitSurvey(formValues, history)}
-      >
-        Send Survey
-        <i className="material-icons right">email</i>
-      </button>
+    <div className="card darken-1">
+      <div className="card-content">
+        <span className="card-title">Please confirm</span>
+        <p>{reviewFields}</p>
+      </div>
+      <div className="card-action">
+        <button
+          className="yellow white-text darken-3 btn-flat"
+          onClick={onCancel}
+        >
+          Back
+        </button>
+        <button
+          className="green white-text btn-flat right"
+          onClick={() => submitSurvey(formValues, history)}
+        >
+          Send Survey
+          <i className="material-icons right">email</i>
+        </button>
+      </div>
     </div>
   );
 };
